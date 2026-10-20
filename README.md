@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
   <img src="./assets/banner.svg" alt="Ziheng Xu" width="100%" />
 </div>
 
@@ -32,7 +32,7 @@ Most of the repositories here are coursework, competition projects, and small to
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LBJ6-23-1230/LBJ6-23-1230/output/github-snake-dark.svg" alt="contribution snake" width="100%" />
+  <img src="https://raw.githubusercontent.com/LBJ6-23-1230/LBJ6-23-1230/output/github-snake.svg" alt="contribution snake" width="100%" />
 </p>
 
 ## Selected projects
