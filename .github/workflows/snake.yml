@@ -22,6 +22,25 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
+      - name: Force white background on the light snake
+        run: |
+          python3 - <<'PY'
+          import re
+          import pathlib
+
+          p = pathlib.Path("dist/github-snake.svg")
+          s = p.read_text(encoding="utf-8")
+          m = re.search(r'<svg[^>]*viewBox="([-\d.]+) ([-\d.]+) ([-\d.]+) ([-\d.]+)"[^>]*>', s)
+          if m:
+              x, y, w, h = m.groups()
+              rect = f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#ffffff"/>'
+              s = s[:m.end()] + rect + s[m.end():]
+              p.write_text(s, encoding="utf-8")
+              print("white background inserted")
+          else:
+              print("viewBox not found, skipped")
+          PY
+
       - name: Publish to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
